@@ -1,7 +1,7 @@
 import gevent
 
 
-class Timer:
+class _Timer:
     active = None
 
     def __init__(self):
@@ -15,7 +15,7 @@ class Timer:
 
 
 def set_interval(func, secs):
-    timer = Timer()
+    timer = _Timer()
     timer.start()
 
     while timer.active:
@@ -26,7 +26,7 @@ def set_interval(func, secs):
 
 
 def set_timeout(func, secs):
-    timer = Timer()
+    timer = _Timer()
 
     gevent.sleep(secs)
     if timer.active is None:
