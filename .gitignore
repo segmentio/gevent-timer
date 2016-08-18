@@ -11,3 +11,4 @@ __pycache__/
 
 # setup tools
 *.egg-info/
+dist
